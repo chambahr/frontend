@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../product.service';
 import { Product } from '../product.model';
 import { HttpClient } from '@angular/common/http';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,6 +13,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProductFormComponent implements OnInit {
   private url = 'http://localhost:9090/api/products/create/';
+
+  productForm: FormGroup;
 
   product: any;
   selectedImage: File | null = null;
@@ -27,10 +30,14 @@ export class ProductFormComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private http: HttpClient,
-    private productService: ProductService
+    private productService: ProductService,
+    private formBuilder: FormBuilder
   ) {
-    // Initialize the imageUrl property
-    // this.imageUrl = '';
+    this.productForm = this.formBuilder.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required]
+    });
   }
 
   ngOnInit() {

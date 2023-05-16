@@ -9,11 +9,11 @@
           <div class="col-md-8">
             <div class="title justify-content-between">
               <span class="addtocart">
-                <a [routerLink]="['/products', product._id]" class="btn btn-primary">Add to Cart</a>
+                <!-- <a [routerLink]="['/products', product._id]" class="btn btn-primary">Add to Cart</a> -->
               </span>
               <h2>{{ product.name }}</h2>
             </div>
-            <p><strong>Price:</strong> {{ product.price }}</p>
+            <p><strong>Price:</strong> ${{ product.price }}</p>
             <p><strong>Description:</strong> {{ product.description }}</p>
             <a [routerLink]="['/products', product._id, 'edit']" class="btn btn-primary">Edit</a>
           </div>

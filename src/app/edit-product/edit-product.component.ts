@@ -34,7 +34,7 @@ export class EditProductComponent implements OnInit {
     this.productService.getProduct(id).subscribe(
       (product: Product) => {
         this.product = product;
-        console.log(this.product);
+        // console.log(this.product);
       },
       error => {
         console.log('Error occurred:', error);
@@ -46,6 +46,7 @@ export class EditProductComponent implements OnInit {
 
     if (!this.product || !this.product._id) {
       console.log('Invalid product');
+      alert('invalid product')
       return;
     }
     
@@ -57,15 +58,17 @@ export class EditProductComponent implements OnInit {
       imageUrl: this.product.imageUrl
     };
 
-    console.log(updatedProduct);
+    // console.log(updatedProduct);
     
 
     this.productService.updateProduct(updatedProduct).subscribe(
       response => {
         console.log('Product updated successfully');
+        alert('Product updated successfully')
 
         if (!this.product || !this.product._id) {
-          console.log('Invalid product');
+          // console.log('Invalid product');
+          alert('Invalid product')
           return;
         }
         this.router.navigate(['/products', this.product._id]);

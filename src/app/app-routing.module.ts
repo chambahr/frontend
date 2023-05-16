@@ -7,12 +7,13 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/products', pathMatch: 'full' },
+  { path: '', component: ProductListComponent },
+  // { path: '', redirectTo: '/products', pathMatch: 'full' },
   { path: 'products', component: ProductListComponent },
   { path: 'products/new', component: ProductFormComponent },
   { path: 'products/:id', component: ProductDetailComponent },
   { path: 'products/:id/edit', component: EditProductComponent }, 
-  { path: 'contact/', component: ContactComponent }
+  { path: 'contact', component: ContactComponent }
 ];
 
 @NgModule({

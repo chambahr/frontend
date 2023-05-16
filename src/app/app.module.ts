@@ -10,6 +10,8 @@ import { ProductFormComponent } from './product-form/product-form.component';
 import { HttpClientModule } from '@angular/common/http';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { ContactComponent } from './contact/contact.component'
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -25,7 +27,8 @@ import { ContactComponent } from './contact/contact.component'
     FormsModule,
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
